@@ -6,7 +6,8 @@ import type { AppMode } from './types'
 // The ONLY configuration in this app is the Swipelux API key.
 // No key → demo mode (local realistic data). Key → live sandbox.
 const KEY_STORAGE = 'swipelux_api_key'
-const DEFAULT_BASE_URL = 'https://platform.sbx.swipelux.com'
+// One host serves sandbox and live; the API key selects the environment.
+const DEFAULT_BASE_URL = 'https://platform.swipelux.com'
 
 export function getBaseUrl(): string {
   return import.meta.env.VITE_API_URL ?? DEFAULT_BASE_URL
